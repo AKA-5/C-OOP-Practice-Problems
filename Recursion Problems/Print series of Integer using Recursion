@@ -12,12 +12,24 @@ void num_Pattern(int n)
 	return;
 }
 
+void num_pattern(int n, int original)
+{
+	if (original <= n)
+	{
+		cout << original << " ";
+		num_pattern(n,original + 1);
+	}
+	else
+		return;
+}
+
 int main()
 {
+// we will be printing series both in ascending and descending order
     int n1 = 0;
     cout << "Integer to print its series:";
     cin >> n1;
-    num_Pattern(n);
+    num_Pattern(n); 
     cout<<endl;
     num_pattern(n1,1);
 
