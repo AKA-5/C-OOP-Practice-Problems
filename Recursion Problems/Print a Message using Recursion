@@ -1,0 +1,20 @@
+void Message(int n)
+{
+	if (n > 0)
+	{
+		cout << "This is Message no. " << n << endl;
+		Message(n-1);
+	}
+	else
+		return;
+}
+
+
+#include<iostream>
+using namespace std;
+ 
+int main()
+{
+	Message(5);
+	return 0;
+}
