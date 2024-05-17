@@ -1,0 +1,88 @@
+#include<iostream>
+using namespace std;
+
+void spaces(int n)
+{
+	if (n > 0)
+	{
+		cout << "  ";
+		spaces(n - 1);
+	}
+	else
+		return;
+}
+
+void pattern1(int n)
+{
+	if (n > 0)
+	{
+		cout << ". ";
+		pattern1(n - 1);
+	}
+	else
+		return;
+}
+
+void pattern2(void)
+{
+	cout << "| ";
+}
+
+void pattern3(int n)
+{
+	if (n > 0)
+	{
+		cout << "* ";
+		pattern3(n - 1);
+	}
+	else 
+		return;
+}
+void pattern4(void)
+{
+	cout << "# ";
+}
+
+void RecursivePattern3(int n1, int n2)    // (5,5)
+{
+	if (n1 < 1)
+	{
+	
+		return;
+
+	}
+
+	else
+	{
+		spaces(n1);
+		pattern4();		// #
+		pattern1(n1);   // .
+		pattern3((n2 - n1) * 2);	// **
+		pattern2();		// |
+		pattern3((n2 - n1) * 2);
+		pattern1(n1);
+		pattern4();		// #
+		cout << endl;
+		if (n1 > 1)
+		{
+
+			RecursivePattern3(n1 - 1, n2);
+			spaces(n1);
+			pattern4();		// #
+			pattern1(n1);   // .
+			pattern3((n2 - n1) * 2);	// **
+			pattern2();		// |
+			pattern3((n2 - n1) * 2);
+			pattern1(n1);
+			pattern4();		// #
+			cout << endl;
+		}
+	}
+}
+
+
+int main()
+{
+    RecursivePattern3(5,5);
+
+    return 0;
