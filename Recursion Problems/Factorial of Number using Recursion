@@ -1,0 +1,26 @@
+unsigned int factorial(unsigned int n)
+{
+	if (n == 0 or n == 1)
+	{
+		return 1;
+	}
+
+	else
+	{
+		return n*factorial(n - 1);
+	}
+}
+
+#include<iostream>
+using namespace std;
+ 
+int main()
+{
+		
+	unsigned int x;
+	cout << "enter number: ";
+	cin >> x;
+	cout << "Factorial : " << factorial(x) << endl;
+
+  return 0;
+}
