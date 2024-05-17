@@ -1,0 +1,96 @@
+#include<iostream>
+using namespace std;
+
+
+void spaces1(int s)
+{
+	if (s <= 1)
+		return;
+	else
+	{
+		cout << "  ";
+		spaces1(s - 1);
+	}
+}
+
+void RecursivePattern1(int start, int end)  // (1,10)
+{
+	if (start <= end-1)
+	{
+		if(start<=end/2)
+		{
+			spaces1(start);
+			cout << "*" << endl;
+			RecursivePattern1(start + 1, end);
+		}
+		else
+		{
+			spaces1(end-start);
+			cout << "*" << endl;
+			RecursivePattern1(start + 1, end);
+		}
+	}
+
+	else
+		return;
+}
+
+// next part
+void space(int n)
+{
+	if (n <= 0)
+		return;
+	else
+	{
+		cout <<" ";
+		space(n-1);
+	} 
+}
+
+
+void pattern(int n1,int n2)
+{
+	if (n1 <= 0)
+		return;
+	else
+	{
+
+		cout << "*";
+		pattern(n1 - 1,n2);
+	}
+}
+
+void RecursivePattern2(int n1, int n2) // Hollow Diamond 
+{
+	if (n1>0)
+	{	// upper half diamond
+		pattern(n1,n2);
+		space((n2 - n1) * 2);
+		pattern(n1, n2);
+		cout << endl;
+
+		RecursivePattern2(n1 - 1, n2);
+		
+		// lower half diamond
+		pattern(n1, n2);
+		space((n2 - n1) * 2);
+		pattern(n1, n2);
+		cout << endl;
+
+	}
+	else
+		return;
+}
+
+int main()
+{
+    RecursivePattern1(1, 10);
+    cout << endl;
+    RecursivePattern1(1, 9);
+    
+    RecursivePattern2(5, 5);
+    cout << endl;
+    RecursivePattern2(10, 10);
+
+  return 0;
+}
