@@ -1,0 +1,65 @@
+#include<iostream>
+using namespace std;
+
+void line(int n)
+{
+	if (n > 0)
+	{
+		cout << "#" << " ";
+		line(n - 1);
+	}
+	else
+		return;
+}
+void Pattern1(int n)
+{
+	if (n > 0)
+	{
+		line(n);
+		cout << endl;
+		Pattern1(n - 1);
+	}
+	else
+		return;
+}
+
+void line(int n, char c)
+{
+	if (n > 0)
+	{
+		cout << c << " ";
+		line(n - 1,c);
+	}
+	else
+		return;
+}
+void Pattern2(int n, char c)
+{
+	if (n > 0)
+	{
+		line(n, c);
+		cout << endl;
+		Pattern2(n - 1, c);
+	}
+	else
+		return;
+}
+
+int main()
+{
+
+	int n = 0;
+	cout << "Enter number to print patterns of (#):";
+	cin >> n;
+	Pattern1(n);
+
+	char c;
+	int n1 = 0;
+	cout << "\nEnter a character to print its pattern: ";
+	cin >> c;
+	cout << "\nEnter number of times to print: ";
+	cin >> n1;
+	Pattern2(n1, c);
+
+  return 0;
+}
