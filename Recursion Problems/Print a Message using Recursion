@@ -1,3 +1,6 @@
+#include<iostream>
+using namespace std;
+
 void Message(int n)
 {
 	if (n > 0)
@@ -9,9 +12,6 @@ void Message(int n)
 		return;
 }
 
-
-#include<iostream>
-using namespace std;
  
 int main()
 {
