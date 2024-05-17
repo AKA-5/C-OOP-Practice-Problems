@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+bool check(string str,int start,int end)
+{
+	if (str[start] == str[end-1])
+	{
+		if (start > end || start == end) 
+		{
+			return true;
+		}
+		else
+		{
+			return check(str, start + 1, end - 1);
+		}
+	}
+	else
+		return false;
+}
+
+int main()
+{
+
+	string str = "racecar" ;
+	bool b = check(str, 0, str.length());
+	cout << "Palindrome: "<<boolalpha<<b<< endl;
+
+	return 0;
+}
