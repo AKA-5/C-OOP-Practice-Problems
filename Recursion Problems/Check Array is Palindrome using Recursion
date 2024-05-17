@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+ 
+bool check(int* arr, int start, int end)
+{
+	if (arr[start - 1] == arr[end - 1])
+	{
+		if (start >= end)
+			return true;
+		else
+			return check(arr, start + 1, end - 1);
+	}
+	else
+		return false;
+}
+
+int main()
+{
+
+	const int size = 6;
+	int arr[size] = {1,2,3,3,2,1};
+	bool a = check(arr,1,6);
+	 if(a)
+	cout << "Array is Palindrome"<< endl;
+else
+	cout << "Array is not Palindrome" << endl;
+
+	return 0;
+}
